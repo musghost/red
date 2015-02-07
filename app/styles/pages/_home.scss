@@ -1,4 +1,5 @@
-section{
+section,
+#footer{
 	&:before,
 	&:after{
 		content: " ";
@@ -287,3 +288,113 @@ section{
 		}
 	}
 }
+
+#enjoy{
+	.enjoy-features{
+		text-align: center;
+		&:before,
+		&:after{
+			content: " ";
+			display: table;
+		}
+		&:after{
+			clear: both;
+		}
+		.feature{
+			width: 33.33%;
+			float: left;
+			h3{
+				text-transform: uppercase;
+				font-weight: 700;
+				font-size: 19px;
+				margin-top: 40px;
+			}
+			p{
+				line-height: 25px;
+			}
+		}
+	}
+}
+
+footer{
+	background: #141414;
+	color: #5e5e5e;
+	h3{
+		color: #fff;
+		text-transform: uppercase;
+		font-size: 18px;
+		font-weight: 600;
+	}
+	.col{
+		float: left;
+		width: 33.33%;
+		min-height: 1px;
+		height: 100%;
+	}
+	.sub-footer{
+		clear: both;
+	}
+}
+
+#footer {
+	background-color: #141414;
+	color:#676767;
+	a {color:#c4c4c4;}
+	input, textarea {background-color: #141414; border:1px solid #272727;outline: none;width: 100%; margin-bottom:10px; padding:10px 10px; font-size: 12px; font-weight: bold;}
+	.submit_buttom {color:white; }
+	h2 {
+		color: white;
+		font-size: 19px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+		font-weight: bold;
+	}
+}
+.footer_icon li {
+	float: left;
+	background: #212121;
+	border-radius: 200px;
+	height: 45px;
+	width: 45px;
+	margin-right: 12px;
+	-moz-transition: .15s ease-in-out;
+		-webkit-transition: .15s ease-in-out;
+		-o-transition: .15s ease-in-out;
+		-ms-transition: .15s ease-in-out;
+		transition: .15s ease-in-out;
+	i {padding: 13px; color:#575757; font-size: 1.5em;}
+}
+.footer_adress {
+	i{
+		margin-right:20px;
+	}
+	li {margin-bottom: 10px;}
+}
+.footer_icon {
+	li:hover {
+		background-color: white;
+		i {color: #161616;}
+	}
+}
+.col_footer{
+	float: left;
+	width: 33.32%;
+	padding: 40px 40px 0px 40px;
+	min-height: 620px;
+	padding-bottom: 0;
+	&.middle {border-right: 1px solid #242424;border-left: 1px solid #242424;}
+}
+.footer_logo {
+	float: left; 
+	padding: 0px 30px 0px 0px;
+}
+#subfooter { 
+	background-color: #141414;
+	border-top: 1px solid #242424;
+	font-size: 12px;
+	padding: 20px 15px;
+	color: #414141;
+	a { font-weight: bold;}
+}
+.by_author {float: right;}
+.copyright {float: left;}
