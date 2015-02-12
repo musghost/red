@@ -33,8 +33,40 @@ section,
 	text-align: center;
 	position: relative;
 	padding-top: 0;
+	.slides{
+		position: relative;
+		height: 820px;
+	}
+	.carousel-control-direction{
+		position: absolute;
+		top: 50%;
+		width: 100%;
+		left: 0;
+		z-index: 999;
+		margin-top: -15px;
+		a{
+			width: 30px;
+			height: 110px;
+			display: inline-block;
+			background: rgba(0,0,0,0.3);
+			line-height: 110px;
+			color: white;
+			font-size: 35px;
+			&:hover{
+				background: black;
+			}
+			&.left{
+				float: left;
+			}
+			&.right{
+				float: right;
+			}
+		}
+	}
 	.slide{
-		display: inline-block;
+		position: absolute;
+		display: none;
+		top: 0;
 		.slide-text{
 			position: absolute;
 			top: 52.12121212121212%;
@@ -58,6 +90,10 @@ section,
 			font-size: 18px;
 			line-height: 25px;
 		}
+		&.active{
+			display: block;
+			left: 0;
+		}
 	}
 	.carousel-control{
 		position: absolute;
@@ -67,6 +103,7 @@ section,
 		top: initial;
 		width: 100%;
 		opacity: 1;
+		z-index: 999;
 		a{
 			display: inline-block;
 			width: 15px;
@@ -162,6 +199,7 @@ section,
 	}
 	.features{
 		position: relative;
+		overflow: hidden;
 		h3{
 			font-weight: 700;
 			text-transform: uppercase;
@@ -194,6 +232,10 @@ section,
 		&:after{
 			clear: both;
 		}
+		&.f-hide{
+			margin-left: -50%;
+			opacity: 0;
+		}
 	}
 	.button-right{
 		text-align: right;
@@ -221,6 +263,7 @@ section,
 	text-align: center;
 	height: 770px;
 	width: 100%;
+	padding-top: 0;
 	h3{
 		text-transform: uppercase;
 		font-size: 32px;
@@ -228,13 +271,35 @@ section,
 		margin-top: 155px;
 		margin-bottom: 65px;
 	}
+	.testimonials{
+		overflow: hidden;
+	}
+	.tertimonial-name,
+	.tertimonial-profile{
+		display: block;
+	}
+	.tertimonial-name{
+		font-weight: bold;
+		font-size: 17px;
+	}
+
 	.testimonial{
-		width: 58.7%;
-		display: inline-block;
+		display: none;
 		p{
 			line-height: 35px;
 			font-weight: 300;
 			font-size: 20px;
+		}
+		&.active{
+			display: inline-block;
+		}
+	}
+	.track{
+		width: 200%;
+	}
+	.user-image{
+		img{
+			border-radius: 50%;
 		}
 	}
 	.testimonial-control{
@@ -251,6 +316,9 @@ section,
 	}
 	.testimonial-name{
 		display: block;
+	}
+	& > .row{
+		margin: 0;
 	}
 }
 
@@ -308,7 +376,15 @@ section,
 		background: #f7f7f7;
 	}
 	.info-features{
-
+		.information{
+			display: none;
+			&.active{
+				display: block;
+			}
+		}
+		.feature-btn{
+			cursor: pointer;
+		}
 		h2{
 			text-transform: uppercase;
 			font-size: 15.5px;
