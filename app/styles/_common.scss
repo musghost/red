@@ -41,3 +41,63 @@ body{
 		}
 	}
 }
+
+header.small {height: 60px;}
+header {
+ 	position:fixed;
+ 	width: 100%;
+ 	z-index: 999;
+	top: 0;
+	height: 78px;
+	border-bottom: 1px solid rgb(105, 105, 105); /* The Fallback */
+	border-bottom: 1px solid rgba(255, 255, 255, .15);
+	-webkit-background-clip: padding-box; /* for Safari */
+	background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+	.navbar{
+		position: static;
+	}
+ }
+
+.main_nav {float: right; margin-top: 28px; }
+.main_nav li {
+	float: left;
+	text-transform: uppercase;
+	font-size:13px;
+	margin-right:38px;
+	font-weight: bolder;
+	z-index: 1;
+	list-style: none;
+	position: relative;
+	float: left;
+	display: inline;
+}
+
+.main_nav li a {color:#B8B8B8;}
+.main_nav li.active a, .main_nav li a:hover {color:white;}
+
+.social_nav{
+	position: absolute;
+	right: 0;
+	top: 0;
+	ul{
+		list-style: none;
+	}
+	i {color:white;}
+	li {
+		float: left;
+		i {
+			padding:28px;
+			border-left: 1px solid rgb(105, 105, 105); /* The Fallback */
+			border-left: 1px solid rgba(255, 255, 255, .15);
+			-webkit-background-clip: padding-box; /* for Safari */
+			background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+		}
+	}
+	.fa-2x {font-size: 1.5em!important;}
+}
+.logo-pafc{
+	position: absolute;
+	left: 13px;
+	top: 9px;
+}
+
