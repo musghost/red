@@ -142,14 +142,76 @@ testimonials = do ->
     elements = testimonial.find '.testimonial'
     buttons = testimonial.find('.testimonial-control').first().find 'a'
     active = 0
+    speed = 600
 
-    init = ->
+    left = ->
+        if active + 1 >= elements.length
+            next = 0
+        else
+            next = active + 1
+        elements.eq(active).animate({
+            left: '-100%'
+            opacity: 0
+        }, speed, ->
+            _this = $ this
+            _this.removeAttr('style').removeClass 'active'
+        )
+        elements.eq(next).css({
+            display: 'block'
+            opacity: 0
+            left: '100%'
+            top: 0
+            position: 'absolute'
+            width: '100%'
+        }).animate({
+            left: 0
+            opacity: 1
+        }, speed, ->
+            _this = $ this
+            _this.addClass('active').removeAttr 'style'
+        )
+        buttons.removeClass 'active'
+        buttons.eq(next).addClass 'active'
+        active = next
+    right = ->
+        if active - 1 < 0
+            elements.left -1
+        else
+            next = active - 1
+        elements.eq(active).animate({
+            left: '100%'
+            opacity: 0
+        }, speed, ->
+            _this = $ this
+            _this.removeAttr('style').removeClass 'active'
+        )
+        elements.eq(next).css({
+            display: 'block'
+            opacity: 0
+            left: '-100%'
+            top: 0
+            position: 'absolute'
+            width: '100%'
+        }).animate({
+            left: 0
+            opacity: 1
+        }, speed, ->
+            _this = $ this
+            _this.addClass('active').removeAttr 'style'
+        )
+        buttons.removeClass 'active'
+        buttons.eq(next).addClass 'active'
+        active = next
+
+    init: ->
         buttons.each (i) ->
             button = $ this
             button.click (e) ->
+                console.log 'clicked'
                 e.preventDefault()
                 if i > active
                     left()
                 else if i < active
                     right()
 
+testimonials.init()

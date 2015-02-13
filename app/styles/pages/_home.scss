@@ -291,11 +291,13 @@ section,
 			font-size: 20px;
 		}
 		&.active{
-			display: inline-block;
+			display: block;
+			position: relative;
 		}
 	}
 	.track{
-		width: 200%;
+		width: 100%;
+		position: relative;
 	}
 	.user-image{
 		img{
