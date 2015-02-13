@@ -67,6 +67,10 @@ section,
 		position: absolute;
 		display: none;
 		top: 0;
+		width: 100%;
+		height: 823px;
+		background-repeat: no-repeat;
+		background-size: cover;
 		.slide-text{
 			position: absolute;
 			top: 52.12121212121212%;
@@ -328,6 +332,12 @@ section,
 #logos{
 	color: white;
 	padding-top: 0;
+	.logos-group{
+		display: none;
+		&.active{
+			display: block;
+		}
+	}
 	.logos-row{
 		background: #eaeaea;
 		&:before,

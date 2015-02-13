@@ -1,3 +1,4 @@
+# Carousel
 carousel = do () ->
     container = $ '#carousel'
     slides = container.find '.slide'
@@ -12,8 +13,8 @@ carousel = do () ->
         slides.eq(active).animate({
             left: '-100%'
         }, speed, ->
-            slide = $ this
-            slide.removeClass('active').removeAttr 'style'
+            slide = $ @
+            slide.removeClass('active')
         )
         slides.eq(next).css({
             display: 'block'
@@ -21,8 +22,8 @@ carousel = do () ->
         }).animate({
             left: '0'
         }, speed, ->
-            slide = $ this
-            slide.removeAttr('style').addClass 'active'
+            slide = $ @
+            slide.addClass 'active'
             buttons.removeClass('active').eq(next).addClass 'active'
         )
         active = next
@@ -31,8 +32,8 @@ carousel = do () ->
         slides.eq(active).animate({
             left: '100%'
         }, speed, ->
-            slide = $ this
-            slide.removeClass('active').removeAttr 'style'
+            slide = $ @
+            slide.removeClass('active')
         )
         slides.eq(next).css({
             display: 'block'
@@ -40,8 +41,8 @@ carousel = do () ->
         }).animate({
             left: '0'
         }, speed, ->
-            slide = $ this
-            slide.removeAttr('style').addClass 'active'
+            slide = $ @
+            slide.addClass 'active'
             buttons.removeClass('active').eq(next).addClass 'active'
         )
         active = next
@@ -54,14 +55,16 @@ carousel = do () ->
             return
         else
             activeSlide.fadeOut ->
-                activeSlide.removeClass('active').removeAttr('style')
-            newSlide.fadeIn ->
-                newSlide.addClass('active').removeAttr('style')
+                activeSlide.removeClass('active')
+            newSlide.css({
+                left: '0'
+            }).fadeIn ->
+                newSlide.addClass('active')
             buttons.removeClass('active').eq(slide).addClass 'active'
             active = slide
 
     module.init = ->
-        container.find('.right').click (e)->
+        container.find('.left').click (e)->
             e.preventDefault()
             if active - 1 < 0
                 next = numSlides - 1
@@ -69,7 +72,7 @@ carousel = do () ->
                 next = active - 1;
             moveBack next
 
-        container.find('.left').click (e)->
+        container.find('.right').click (e)->
             e.preventDefault()
             if active + 1 >= numSlides
                 next = 0
@@ -78,19 +81,19 @@ carousel = do () ->
             moveNext next
 
         buttons.each (i) ->
-            button = $ this
+            button = $ @
             button.click (e)->
                 e.preventDefault()
                 fadeSlide i
     module
 
+# Information module
 infoFeature = do ->
-
     information = $('.info-features-list').find '.info-feature'
     {
         init: ->
             information.each ->
-                feature = $ this
+                feature = $ @
                 button = feature.find '.feature-btn'
                 info = feature.find '.information'
                 button.click (e)->
@@ -100,7 +103,7 @@ infoFeature = do ->
     }
 
 
-# features
+# Features
 features = do ->
 
     fSection = $('#features')
@@ -117,26 +120,20 @@ features = do ->
             onEnter: (element, position)->
                 time = 100
                 elements.each ->
-                    feature = $ this
+                    feature = $ @
                     setTimeout(->
                         feature.animate({
                             opacity: 1
                             'margin-left': '20px'
                         }, 800, ->
-                            $(this).removeClass('f-hide').removeAttr 'style'
+                            $(@).removeClass('f-hide').removeAttr 'style'
                         )
                     , time)
                     time += 200
         })
 
 
-features.init()
-carousel.init()
-infoFeature.init()
-
-
-# testimonial
-
+# Testimonials
 testimonials = do ->
     testimonial = $ '#testimonials'
     elements = testimonial.find '.testimonial'
@@ -153,7 +150,7 @@ testimonials = do ->
             left: '-100%'
             opacity: 0
         }, speed, ->
-            _this = $ this
+            _this = $ @
             _this.removeAttr('style').removeClass 'active'
         )
         elements.eq(next).css({
@@ -167,7 +164,7 @@ testimonials = do ->
             left: 0
             opacity: 1
         }, speed, ->
-            _this = $ this
+            _this = $ @
             _this.addClass('active').removeAttr 'style'
         )
         buttons.removeClass 'active'
@@ -182,7 +179,7 @@ testimonials = do ->
             left: '100%'
             opacity: 0
         }, speed, ->
-            _this = $ this
+            _this = $ @
             _this.removeAttr('style').removeClass 'active'
         )
         elements.eq(next).css({
@@ -196,7 +193,7 @@ testimonials = do ->
             left: 0
             opacity: 1
         }, speed, ->
-            _this = $ this
+            _this = $ @
             _this.addClass('active').removeAttr 'style'
         )
         buttons.removeClass 'active'
@@ -205,7 +202,7 @@ testimonials = do ->
 
     init: ->
         buttons.each (i) ->
-            button = $ this
+            button = $ @
             button.click (e) ->
                 console.log 'clicked'
                 e.preventDefault()
@@ -214,4 +211,27 @@ testimonials = do ->
                 else if i < active
                     right()
 
+
+# Logos
+logos = do ->
+    section = $ '#logos'
+    rows = section.find '.logos-group'
+    buttons = section.find '.logo-control a'
+
+    init: ->
+        buttons.each (i) ->
+            btn = $ @
+            btn.click (e) ->
+                e.preventDefault()
+                rows.filter('.active').fadeOut ->
+                    $(@).removeClass 'active'
+                    buttons.removeClass 'active'
+                    buttons.eq(i).addClass 'active'
+                    rows.eq(i).fadeIn ->
+                        $(@).addClass 'active'
+
+features.init()
+carousel.init()
+infoFeature.init()
 testimonials.init()
+logos.init()
