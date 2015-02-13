@@ -115,8 +115,8 @@ features = do ->
     init: ->
         getStarted()
         fSection.scrollspy({
-            min: fSection.offset().top - 300
-            max: fSection.offset().top + fSection.height()
+            min: fSection.offset()?.top - 300
+            max: fSection.offset()?.top + fSection.height()
             onEnter: (element, position)->
                 time = 100
                 elements.each ->
