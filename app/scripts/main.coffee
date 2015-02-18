@@ -235,3 +235,17 @@ carousel.init()
 infoFeature.init()
 testimonials.init()
 logos.init()
+
+
+do ->
+    menu = $ '.menu-group'
+    $(document).scroll ->
+        top = $(@).scrollTop()
+        if top > 100 and top <= 210
+            m = if top - 210 > 1 then 1 else (top - 210)
+            m*=-1
+            menu.css
+                background: "rgba(0,0,0,#{ 1 - m / 110 })"
+        else if top <= 100
+            menu.css
+                background: "rgba(0,0,0,0)"
