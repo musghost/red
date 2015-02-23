@@ -33,9 +33,34 @@ section,
 	text-align: center;
 	position: relative;
 	padding-top: 0;
+  @media screen and (max-width: 991px){
+    height: 635px !important;
+  }
+  @media screen and (max-width: 768px){
+    height: 491px !important;
+  }
+  @media screen and (max-width: 640px){
+    height: 408px !important;
+  }
+  @media screen and (max-width: 480px){
+    height: 300px !important;
+  }
 	.slides{
+    top: 0;
 		position: relative;
 		height: 820px;
+    @media screen and (max-width: 991px){
+      height: 635px !important;
+    }
+    @media screen and (max-width: 768px){
+      height: 491px !important;
+    }
+    @media screen and (max-width: 640px){
+      height: 408px !important;
+    }
+    @media screen and (max-width: 480px){
+      height: 300px !important;
+    }
 	}
 	.carousel-control-direction{
 		position: absolute;
@@ -43,7 +68,7 @@ section,
 		width: 100%;
 		left: 0;
 		z-index: 999;
-		margin-top: -15px;
+    margin-top: -15px;
 		a{
 			width: 30px;
 			height: 110px;
@@ -71,12 +96,37 @@ section,
 		height: 823px;
 		background-repeat: no-repeat;
 		background-size: cover;
+    @media screen and (max-width: 991px){
+      height: 635px !important;
+    }
+    @media screen and (max-width: 768px){
+      height: 491px !important;
+    }
+    @media screen and (max-width: 640px){
+      height: 408px !important;
+    }
+    @media screen and (max-width: 480px){
+      height: 300px !important;
+    }
+
 		.slide-text{
 			position: absolute;
 			top: 52.12121212121212%;
 			width: 100%;
 			left: 0;
 			text-transform: uppercase;
+      @media screen and (max-width: 991px){
+        top: 32%;
+      }
+      @media screen and (max-width: 768px){
+        top: 50%;
+      }
+      @media screen and (max-width: 640px){
+        top: 34%;
+      }
+      @media screen and (max-width: 480px){
+        top: 37%;
+      }
 		}
 		h1, h3{
 			max-width: 49.20634920634921%;
@@ -84,15 +134,39 @@ section,
 		}
 		h1{
 			color: black;
-			font-size: 92px;
+			font-size: 88px;
 			font-weight: 700;
 			line-height: 100px;
+      @media screen and (max-width: 991px){
+        font-size: 70px !important;
+      }
+      @media screen and (max-width: 768px){
+        font-size: 30px !important;
+        top: 25% !important;
+        line-height: 1px !important;
+      }
+      @media screen and (max-width: 640px){
+        font-size: 25px !important;
+      }
+      @media screen and (max-width: 480px){
+        font-size: 16px !important;
+      }
 		}
 		h3{
 			color: $deepBlackSec;
 			font-weight: 300;
 			font-size: 18px;
 			line-height: 25px;
+      @media screen and (max-width: 768px){
+        font-size: 18px !important;
+      }
+      @media screen and (max-width: 640px){
+        font-size: 15px !important;
+      }
+      @media screen and (max-width: 480px){
+        font-size: 11px !important;
+        line-height: 18px;
+      }
 		}
 		&.active{
 			display: block;
@@ -108,6 +182,8 @@ section,
 		width: 100%;
 		opacity: 1;
 		z-index: 999;
+     @media screen and (max-width: 480px){
+        top: 88%      }
 		a{
 			display: inline-block;
 			width: 15px;
@@ -176,7 +252,10 @@ section,
 		img{
 			width: 100%;
 		}
-	}
+    @media screen and (max-width: 768px){
+      display: none;
+      }
+    }
 	.i-feature{
 		display: inline-block;
 		width: 78px;
@@ -421,6 +500,7 @@ section,
 		}
 	}
 	.info-features-list{
+    margin-bottom: 15px;
 		.info-feature{
 			background: white;
 			h3{
@@ -579,6 +659,9 @@ margin-bottom: 15px;}
 			p{
 				line-height: 25px;
 			}
+      @media screen and (max-width: 767px){
+        width: 100%;
+      }
 		}
 	}
 }
@@ -653,7 +736,16 @@ margin-bottom: 15px;}
 	.divider_padding{
 		margin-bottom: 65px;
 	}
-	&.middle {border-right: 1px solid #242424;border-left: 1px solid #242424;}
+	&.middle {
+    border-right: 1px solid #242424;
+    border-left: 1px solid #242424;
+  @media screen and (max-width: 767px){
+    display: none;
+    }
+  }
+  @media screen and (max-width: 767px){
+    width: 100%;
+  }
 }
 .footer_logo {
 	float: left;
