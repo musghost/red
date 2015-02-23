@@ -33,15 +33,33 @@ section,
 	text-align: center;
 	position: relative;
 	padding-top: 0;
-  @media screen and (max-width: 780px){
+  @media screen and (max-width: 991px){
+    height: 635px !important;
+  }
+  @media screen and (max-width: 768px){
     height: 491px !important;
+  }
+  @media screen and (max-width: 640px){
+    height: 408px !important;
+  }
+  @media screen and (max-width: 480px){
+    height: 300px !important;
   }
 	.slides{
     top: 0;
 		position: relative;
 		height: 820px;
-    @media screen and (max-width: 780px){
+    @media screen and (max-width: 991px){
+      height: 635px !important;
+    }
+    @media screen and (max-width: 768px){
       height: 491px !important;
+    }
+    @media screen and (max-width: 640px){
+      height: 408px !important;
+    }
+    @media screen and (max-width: 480px){
+      height: 300px !important;
     }
 	}
 	.carousel-control-direction{
@@ -78,17 +96,36 @@ section,
 		height: 823px;
 		background-repeat: no-repeat;
 		background-size: 100%;
-    @media screen and (max-width: 780px){
+    @media screen and (max-width: 991px){
+      height: 635px !important;
+    }
+    @media screen and (max-width: 768px){
       height: 491px !important;
     }
+    @media screen and (max-width: 640px){
+      height: 408px !important;
+    }
+    @media screen and (max-width: 480px){
+      height: 300px !important;
+    }
+
 		.slide-text{
 			position: absolute;
 			top: 52.12121212121212%;
 			width: 100%;
 			left: 0;
 			text-transform: uppercase;
-      @media screen and (max-width: 780px){
-        top: 25%;
+      @media screen and (max-width: 991px){
+        top: 36%;
+      }
+      @media screen and (max-width: 768px){
+        top: 50%;
+      }
+      @media screen and (max-width: 640px){
+        top: 42%;
+      }
+      @media screen and (max-width: 480px){
+        top: 37%;
       }
 		}
 		h1, h3{
@@ -97,13 +134,22 @@ section,
 		}
 		h1{
 			color: black;
-			font-size: 92px;
+			font-size: 88px;
 			font-weight: 700;
 			line-height: 100px;
-      @media screen and (max-width: 780px){
-        font-size: 42px !important;
+      @media screen and (max-width: 991px){
+        font-size: 70px !important;
+      }
+      @media screen and (max-width: 768px){
+        font-size: 30px !important;
         top: 25% !important;
-        line-height: 1px; !important;
+        line-height: 1px !important;
+      }
+      @media screen and (max-width: 640px){
+        font-size: 25px !important;
+      }
+      @media screen and (max-width: 480px){
+        font-size: 16px !important;
       }
 		}
 		h3{
@@ -111,6 +157,16 @@ section,
 			font-weight: 300;
 			font-size: 18px;
 			line-height: 25px;
+      @media screen and (max-width: 768px){
+        font-size: 18px !important;
+      }
+      @media screen and (max-width: 640px){
+        font-size: 15px !important;
+      }
+      @media screen and (max-width: 480px){
+        font-size: 11px !important;
+        line-height: 18px;
+      }
 		}
 		&.active{
 			display: block;
@@ -126,6 +182,8 @@ section,
 		width: 100%;
 		opacity: 1;
 		z-index: 999;
+     @media screen and (max-width: 480px){
+        top: 88%      }
 		a{
 			display: inline-block;
 			width: 15px;
