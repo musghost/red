@@ -114,7 +114,6 @@ section,
 			top: 52.12121212121212%;
 			width: 100%;
 			left: 0;
-			text-transform: uppercase;
       @media screen and (max-width: 991px){
         top: 32%;
       }
@@ -137,6 +136,7 @@ section,
 			font-size: 88px;
 			font-weight: 700;
 			line-height: 100px;
+			text-shadow: 2px 1px 1px white;
       @media screen and (max-width: 991px){
         font-size: 70px !important;
       }
