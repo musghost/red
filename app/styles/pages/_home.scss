@@ -111,14 +111,14 @@ section,
 
 		.slide-text{
 			position: absolute;
-			top: 52.12121212121212%;
+			top: 42.12121212121212%;
 			width: 100%;
 			left: 0;
       @media screen and (max-width: 991px){
-        top: 32%;
+        top: 22%;
       }
       @media screen and (max-width: 768px){
-        top: 50%;
+        top: 30%;
       }
       @media screen and (max-width: 640px){
         top: 34%;
@@ -139,11 +139,12 @@ section,
 			text-shadow: 2px 1px 1px white;
       @media screen and (max-width: 991px){
         font-size: 70px !important;
+        line-height: 80px;
       }
       @media screen and (max-width: 768px){
         font-size: 26px !important;
         top: 25% !important;
-        line-height: 1px !important;
+        line-height: 26px !important;
       }
       @media screen and (max-width: 640px){
         font-size: 22px !important;
