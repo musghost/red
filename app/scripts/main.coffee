@@ -137,15 +137,27 @@ features = do ->
 testimonials = do ->
     testimonial = $ '#testimonials'
     elements = testimonial.find '.testimonial'
-    buttons = testimonial.find('.testimonial-control').first().find 'a'
+    control = testimonial.find('.testimonial-control').first()
+
+    control.html ''
+
+    x = 1
+    while x <= elements.length
+        x++;
+        control.append('<a href="#"></a>')
+
+    buttons = control.find 'a'
+
+    buttons.first().addClass 'active'
+
     active = 0
     speed = 600
 
-    left = ->
-        if active + 1 >= elements.length
+    left = (pos)->
+        if active + pos >= elements.length
             next = 0
         else
-            next = active + 1
+            next = active + pos
         elements.eq(active).animate({
             left: '-100%'
             opacity: 0
@@ -170,11 +182,11 @@ testimonials = do ->
         buttons.removeClass 'active'
         buttons.eq(next).addClass 'active'
         active = next
-    right = ->
-        if active - 1 < 0
+    right = (pos)->
+        if active - pos < 0
             elements.left -1
         else
-            next = active - 1
+            next = active - pos
         elements.eq(active).animate({
             left: '100%'
             opacity: 0
@@ -204,12 +216,11 @@ testimonials = do ->
         buttons.each (i) ->
             button = $ @
             button.click (e) ->
-                console.log 'clicked'
                 e.preventDefault()
                 if i > active
-                    left()
+                    left(i - active)
                 else if i < active
-                    right()
+                    right(active - i)
 
 
 # Logos
