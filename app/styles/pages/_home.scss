@@ -384,7 +384,7 @@ section,
 	}
 	.user-image{
 		img{
-			border-radius: 50%;
+
 		}
 	}
 	.testimonial-control{
@@ -492,6 +492,9 @@ section,
 			padding: 25px 10px;
 			margin-bottom: 0;
 			color: #9c9c9c;
+			& + p{
+				padding-top: 0;
+			}
 		}
 	}
 	.info-image{
